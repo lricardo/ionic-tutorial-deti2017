@@ -11,4 +11,8 @@ export class HomePage {
 
   }
 
+  addNewNote () {
+    console.log("You are pushing this button!!");
+  }
+
 }
