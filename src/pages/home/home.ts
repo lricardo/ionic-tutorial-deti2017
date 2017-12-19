@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { AddNewPage } from '../add-new/add-new';
 
 @Component({
   selector: 'page-home',
@@ -12,7 +13,7 @@ export class HomePage {
   }
 
   addNewNote () {
-    console.log("You are pushing this button!!");
+    this.navCtrl.push(AddNewPage);
   }
 
 }
