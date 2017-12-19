@@ -8,16 +8,15 @@
 
 <ion-content padding>
   
-  <!-- card 1 -->
-  <ion-card>
+  <ion-card *ngFor="let note of notes">
     <ion-card-header>
-      Fix you
+      {{ note.title }}
     </ion-card-header>
     <ion-card-content>
-      Is a title of a music from Coldplay
+      {{ note.content }}
     </ion-card-content>
   </ion-card>
-  <!-- End of card 1 -->
+
   <ion-fab right bottom>
     <button ion-fab (click)="addNewNote()">
       <ion-icon name="add"></ion-icon>

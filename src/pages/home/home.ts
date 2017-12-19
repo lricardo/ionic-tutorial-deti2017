@@ -7,9 +7,22 @@ import { AddNewPage } from '../add-new/add-new';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  private notes: Object[];
   constructor(public navCtrl: NavController) {
-
+    this.notes = [
+      {
+        "title" : "Coldplay",
+        "content": "Fix you"
+      },
+      {
+        "title": "Overgrown",
+        "content": "James Blake"
+      },
+      {
+        "title": "Cashmere",
+        "content": "BADBADNOTGOOD"
+      }
+    ];
   }
 
   addNewNote () {
