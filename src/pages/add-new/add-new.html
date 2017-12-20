@@ -9,7 +9,7 @@
   <ion-navbar>
     <ion-title>Add new note</ion-title>
     <ion-buttons end>
-      <button ion-button>Save</button>
+      <button [disabled]="isButtonDisabled()" ion-button>Save</button>
     </ion-buttons>
   </ion-navbar>
   
@@ -19,9 +19,9 @@
 
 <ion-content>
   <ion-item>
-    <ion-input type="text" placeholder="Your note title"></ion-input>
+    <ion-input [(ngModel)]="title" type="text" placeholder="Your note title"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-textarea type="text" placeholder="Write your note here"></ion-textarea>
+    <ion-textarea [(ngModel)]="content" type="text" placeholder="Write your note here"></ion-textarea>
   </ion-item>
 </ion-content>

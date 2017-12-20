@@ -14,12 +14,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'add-new.html',
 })
 export class AddNewPage {
-
+  title: string;
+  content: string;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddNewPage');
+  }
+
+  isButtonDisabled() {
+    let titleNotReady = this.title == "" || this.title == undefined;
+    let contentNotReady = this.content == "" || this.content == undefined;
+
+    return titleNotReady || contentNotReady;
   }
 
 }
