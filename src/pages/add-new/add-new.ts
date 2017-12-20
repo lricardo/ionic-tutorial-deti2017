@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the AddNewPage page.
@@ -17,7 +18,7 @@ import { HomePage } from '../home/home';
 export class AddNewPage {
   title: string;
   content: string;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
   }
 
   ionViewDidLoad() {
@@ -32,7 +33,21 @@ export class AddNewPage {
   }
 
   saveNote () {
-    console.log("save...");
+
+    this.storage.get('todoList').then((notes) => {
+      let currentNote = {"title": this.title, "content": this.content};
+      
+      if (notes == null ) {
+        console.log("Notes are null, initializing...");
+        this.storage.set('todoList', [currentNote]);
+      }
+      else {
+        notes.push(currentNote);
+        this.storage.set('todoList', notes);
+      }
+    });
+
     this.navCtrl.popToRoot();
+    
   }
 }
