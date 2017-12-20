@@ -9,7 +9,7 @@
   <ion-navbar>
     <ion-title>Add new note</ion-title>
     <ion-buttons end>
-      <button [disabled]="isButtonDisabled()" ion-button>Save</button>
+      <button [disabled]="isButtonDisabled()" (click)="saveNote()" ion-button>Save</button>
     </ion-buttons>
   </ion-navbar>
   
